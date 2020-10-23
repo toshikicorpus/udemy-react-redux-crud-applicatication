@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reducer from "./reducers"
 import thunk from "redux-thunk"
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
+
 import EventsIndex from './components/events_index';
 import EventsNew from './components/events_new';
 import EventsShow from './components/events_show';
@@ -14,6 +16,7 @@ import {BrowserRouter,Route,Switch} from "react-router-dom"
 const store = createStore(reducer,applyMiddleware(thunk))
 
 ReactDOM.render(
+  <MuiThemeProvider>
   <Provider store={store}>
     <BrowserRouter>
         <Switch>
@@ -23,7 +26,9 @@ ReactDOM.render(
         <Route exact path="/events" component={EventsIndex} />
         </Switch>
       </BrowserRouter>
-    </Provider>,
+    </Provider>
+    </MuiThemeProvider>
+    ,
   document.getElementById('root')
 );
 
