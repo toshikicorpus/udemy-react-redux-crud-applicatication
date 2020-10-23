@@ -1,4 +1,4 @@
-import {READ_EVENTS} from "../actions"
+import {READ_EVENTS,CREATE_EVENT} from "../actions"
 import _ from "lodash"
 
 
